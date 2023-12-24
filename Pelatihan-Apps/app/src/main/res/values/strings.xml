@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Apps Medis</string>
+    <string name="title_home">Home</string>
+    <string name="title_cairan">Cairan</string>
+    <string name="title_emergency">Emergency</string>
+    <string name="title_About">About</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="daftar">Belum Punya Akun? Silahkan <a href="https://4023-114-125-125-1.ngrok-free.app">Daftar!</a> </string>
+</resources>

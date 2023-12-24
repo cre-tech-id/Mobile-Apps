@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Aplikasi Penilaian Siswa"
+        android:textSize="35dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="250dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:textColor="@color/black"
+        android:text="Jika belum mengerjakan Soal, Silahkan klik tombol dibawah ini, jika sudah mengerjakan maka lihat hasilnya pada menu Hasil. "
+        android:layout_marginTop="310dp"
+        android:textSize="20dp"
+        android:textAlignment="center"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Kerjakan Tes"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="450dp"
+        android:id="@+id/btn_tes"/>
+</FrameLayout>

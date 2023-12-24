@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.ClassFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="200dp"
+        android:text="Silahkan klik tombol dibawah ini untuk pergi ke classroom"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:text="Google Classroom"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="100dp"
+        android:id="@+id/btn_class"/>
+
+</FrameLayout>
