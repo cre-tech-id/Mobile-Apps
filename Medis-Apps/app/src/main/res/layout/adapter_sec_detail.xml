@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/pink"
+    android:paddingBottom="1dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/txt_max_cairan"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:text="0 ml"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ttlmax" />
+
+        <TextView
+            android:id="@+id/ttlmax"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="Total Max Cairan / Hari"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_max_cairan" />
+
+        <TextView
+            android:id="@+id/ttlkon"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:text="Total Konsumsi"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+
+        <TextView
+            android:id="@+id/totalkon"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:text="0 ml"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ttlkon" />
+
+        <TextView
+            android:id="@+id/ss"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/pink"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalkon" />
+
+        <TextView
+            android:id="@+id/txt_sisa"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:text="0 ml"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/ss"
+            app:layout_constraintTop_toBottomOf="@+id/ssa" />
+
+        <TextView
+            android:id="@+id/pr"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Persentase"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/ss"
+            app:layout_constraintTop_toBottomOf="@+id/txt_sisa" />
+
+        <TextView
+            android:id="@+id/ssa"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:text="Sisa"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/ss"
+            app:layout_constraintTop_toTopOf="@+id/ss" />
+        <TextView
+            android:id="@+id/txt_presentase"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:text="0 %"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/ss"
+            app:layout_constraintTop_toBottomOf="@+id/pr" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

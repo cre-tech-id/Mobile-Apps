@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CairanActivity">
+
+    <TextView
+        android:id="@+id/tanggal"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Tanggal"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        />
+    <TextView
+        android:id="@+id/batas"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:text="Batas Max Cairan :"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/jmlurin"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:text="Jml Urin :"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="90dp"
+        />
+    <TextView
+        android:id="@+id/ttlmax"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Total Max Cairan / Hari"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="120dp"
+        android:textSize="25dp"
+        />
+    <TextView
+        android:id="@+id/txt_batas_cairan"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="0 ml"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="160dp"
+        />
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="20dp"
+        />
+    <TextView
+        android:id="@+id/ttlkon"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Total Konsumsi"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="20dp"
+        />
+    <TextView
+        android:id="@+id/totalkon"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="0 ml"
+        android:layout_marginTop="260dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/ss"
+        android:layout_width="350dp"
+        android:layout_height="140dp"
+        android:text=" Sisa"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:background="@color/pink"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="300dp"
+        />
+    <TextView
+        android:id="@+id/txt_sisa"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="  0 ml"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="330dp"
+        />
+    <TextView
+        android:id="@+id/pr"
+        android:textStyle="bold"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text=" Persentase"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="370dp"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/txt_presentase"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="  0 %"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="400dp"
+        />
+    <TextView
+        android:id="@+id/dt"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="Data Konsumsi"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="20dp"
+        />
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="20dp"
+        />
+    <TextView
+        android:id="@+id/txt_menu"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="Air Putih"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="70dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/txt_konsumsi"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="0 ml"
+        android:layout_marginTop="530dp"
+        android:layout_marginLeft="70dp"
+        android:textColor="@color/black"
+        />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/water"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="10dp"
+        />
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Tambah Konsumsi Cairan"
+        android:layout_marginTop="570dp"
+        android:layout_marginLeft="50dp"
+        />
+
+</RelativeLayout>

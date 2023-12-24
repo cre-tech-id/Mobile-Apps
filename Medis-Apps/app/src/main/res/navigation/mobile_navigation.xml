@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.medis.ui.HomeFragment"
+        android:label="HOME | KORAN - HD"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_cairan"
+        android:name="com.example.medis.ui.CairanFragment"
+        android:label="CAIRAN | KORAN-HD"
+        tools:layout="@layout/fragment_cairan" />
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="com.example.medis.ui.AboutFragment"
+        android:label="ABOUT | KORAN-HD"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/navigation_emergency"
+        android:name="com.example.medis.ui.EmergencyFragment"
+        android:label="EMERGENCY | KORAN-HD"
+        tools:layout="@layout/fragment_emergency" />
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.medis.ui.HistoryFragment"
+        android:label="HISTORY | KORAN-HD"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/navigation_edukasi"
+        android:name="com.example.medis.ui.EdukasiFragment"
+        android:label="Edukasi"
+        tools:layout="@layout/fragment_edukasi" />
+</navigation>

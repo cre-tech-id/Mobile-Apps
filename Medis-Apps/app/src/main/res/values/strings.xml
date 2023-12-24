@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">KORAN-HD</string>
+    <string name="title_home">Home</string>
+    <string name="title_cairan">Cairan</string>
+    <string name="title_history">History</string>
+    <string name="title_about">About</string>
+    <string name="title_emergency">Emergency</string>
+    <string name="title_edukasi">Edukasi</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">Aplikasi ini disusun oleh dr. Ramadi Satryo W Sp.PD, dr Budi Santoso SpPD dan Tim Instalasi Hemodialisis RSUD Bangil sebagai bentuk kepedulian terhadap pasien yang rutin hemodialisis di RSUD Bangil. Mohon dapat menggunakan aplikasi ini untuk mengontrol konsumsi cairan sehari hari untuk menghindari komplikasi dari gagal ginjal salah satunya sesak nafas karena cairan yang berlebih. </string>
+    <string name="daftar">Belum Punya Akun? Silahkan <a href="https://89e0-116-251-214-9.ngrok-free.app/registeruser">Daftar!</a> </string>
+    <string name="cara">
+        1. Masuk ke menu cairan lalu pilih input cairan
+        2. Masukan tanggal konsumsi dalam sehari
+        3. Masukkan jumlah air kencing selama 24
+        4. Lanjutkan dengan masukkan Berat Badan (kg)
+        5. Kemudian klik Simpan
+    </string>
+</resources>
