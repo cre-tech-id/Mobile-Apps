@@ -1,30 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.home.HomeFragment">
-
-
-
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Welcome To WO Apps"
-        android:textSize="40dp"
-        android:layout_marginLeft="20dp"
-        android:textColor="@color/black"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="250dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:textColor="@color/black"
-        android:text="Silahkan pilih menu dibawah ini untuk
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_height="200dp"
+            android:src="@drawable/banner"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Welcome To WO Apps"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Silahkan pilih menu dibawah ini untuk
 melakukan pemesanan jasa dan nikmati promo dari event wedding organizer"
-        android:layout_marginTop="310dp"
-        android:textSize="20dp"
-        android:textAlignment="center"/>
-</FrameLayout>
+            android:textSize="20dp"
+            android:textAlignment="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="40dp">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/undraw_wedding_re_66hj" />
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/undraw_walking_together_p172" />
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/love" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -4,70 +4,190 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.profile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="300px"
-        android:layout_height="250px"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="150dp"
-        android:src="@drawable/avatar" />
-
-    <TextView
-        android:layout_width="110dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="200dp"
-        android:text="Nama Pengguna"
-        android:layout_marginLeft="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/loved"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="50dp"
         />
-
-
-
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="350dp"
-        android:src="@drawable/cart" />
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:src="@drawable/personal"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="-30dp"
+        android:layout_marginBottom="80dp"
+        />
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center">
+        <ImageButton
+            android:id="@+id/img_profile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@color/gray"
+            android:layout_marginTop="100dp"
+            />
+        <TextView
+            android:id="@+id/txt_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Nama"
+            android:textColor="@color/black"
+            android:gravity="center"
 
-    <TextView
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginLeft="80dp"
-        android:text="Pesanan"
-        />
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <ImageButton
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:src="@drawable/edit" />
+            <TextView
+                android:id="@+id/txt_gambar"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:text="Edit Profile"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <ImageButton
+                android:id="@+id/btn_pemesanan"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:src="@drawable/cart" />
+            <TextView
+                android:id="@+id/txt_pesanan"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:text="Pesanan"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <ImageButton
+                android:id="@+id/btn_pembayaran"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_attach_money_24"
+                android:background="@color/white"
+                />
+            <TextView
+                android:id="@+id/txt_pembayaran"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:text="Pembayaran"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <ImageButton
+                android:id="@+id/btn_logout"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logout"
+                android:background="@color/white"
+                android:onClick="Logout"/>
+            <TextView
+                android:id="@+id/txt_logout"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:text="Logout"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/logged_out_material"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            android:text="Hello Customer!"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="20dp"
+            android:text="Untuk bisa melanjutkan pemesanan,"/>
+        <TextView
+            android:id="@+id/txt_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="20dp"
+            android:text="Silahkan"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/white"
+                android:background="@color/purple_200"
+                android:layout_weight="1"
+                android:text="Login"/>
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/white"
+                android:background="@color/purple_200"
+                android:layout_weight="1"
+                android:text="Register"/>
+        </LinearLayout>
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="230dp"
-        android:layout_marginLeft="20dp"
-        android:src="@drawable/edit" />
-    <TextView
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:text="Edit Profile"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="250dp"
-        />
-    <TextView
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:text="Logout"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="490dp"
-        />
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/logout"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="480dp"
-        android:background="@color/white"
-        android:onClick="Logout"/>
+    </LinearLayout>
 </FrameLayout>

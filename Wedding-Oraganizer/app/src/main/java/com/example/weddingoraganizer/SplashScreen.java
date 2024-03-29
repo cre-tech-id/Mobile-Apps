@@ -2,7 +2,9 @@ package com.example.weddingoraganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -26,9 +28,16 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreen.this, Login.class));
-                finish();
+                SharedPreferences sp1 = SplashScreen.this.getSharedPreferences("data", Context.MODE_PRIVATE);
+                    if (sp1.contains("logged_in")) {
+                        startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                        finish();
+                    } else {
+                        startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                        finish();
+                    }
             }
         }, 2000);
     }
 }
+

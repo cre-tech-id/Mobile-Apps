@@ -4,7 +4,9 @@
     <string name="title_store">Store</string>
     <string name="title_event">Event</string>
     <string name="title_profile">Profile</string>
+    <string name="title_wo">WO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="daftar">Belum Punya Akun? Silahkan <a href="https://4023-114-125-125-1.ngrok-free.app">Daftar!</a> </string>
+    <string name="daftar">Belum Punya Akun? Silahkan <a href="https://teman-wedding.cretech.id/registeruser">Daftar!</a> </string>
+    <string name="login">Untuk bisa melanjutkan pemesanan, silahkan <a href="asskj">Login!</a> </string>
 </resources>

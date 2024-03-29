@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.profile.EditProfile">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/select_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="Pilih gambar"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:background="@color/purple_700"
+                android:onClick="addPhoto"/>
+
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_launcher" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:textColorHint="@color/black"
+            android:layout_marginTop="20dp"
+            app:boxStrokeColor="@color/purple_700"
+            >
+            <EditText
+                android:id="@+id/edt_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:hint="User Name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/box_kota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:strokeWidth="1dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="15dp"
+            app:strokeColor="@color/black"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/box_provinsi">
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/kota"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/black"
+                android:popupBackground="@color/white"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/box_kecamatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:strokeWidth="1dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="15dp"
+            app:strokeColor="@color/black"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/box_kota">
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/kecamatan"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:popupBackground="@color/white"
+                android:backgroundTint="@color/black"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/box_kelurahan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:strokeWidth="1dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="15dp"
+            app:strokeColor="@color/black"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/box_kecamatan">
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/kelurahan"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:popupBackground="@color/white"
+                android:backgroundTint="@color/black"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:textColorHint="@color/black"
+            android:layout_marginTop="20dp"
+            app:boxStrokeColor="@color/purple_700"
+            >
+            <EditText
+                android:id="@+id/edt_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="User Address"
+                android:singleLine="true"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:textColorHint="@color/black"
+            android:layout_marginTop="20dp"
+            app:boxStrokeColor="@color/purple_700"
+            >
+            <EditText
+                android:id="@+id/edt_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:hint="User number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:boxStrokeColor="@color/purple_700"
+            >
+            <TextView
+                android:id="@+id/helper_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="txt"
+                android:visibility="gone"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="40dp"
+            android:text="Simpan"
+            android:onClick="UploadButton"/>
+
+        <Button
+            android:id="@+id/save_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:layout_marginHorizontal="40dp"
+            android:text="Simpan"
+            android:onClick="UploadButtonWGambar"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

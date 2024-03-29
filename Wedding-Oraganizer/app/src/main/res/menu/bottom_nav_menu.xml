@@ -12,6 +12,11 @@
         android:title="@string/title_store" />
 
     <item
+        android:id="@+id/navigation_wo"
+        android:icon="@drawable/baseline_group_24"
+        android:title="@string/title_wo" />
+
+    <item
         android:id="@+id/navigation_event"
         android:icon="@drawable/event"
         android:title="@string/title_event" />

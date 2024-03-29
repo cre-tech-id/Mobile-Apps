@@ -28,4 +28,9 @@
         android:name="com.example.weddingoraganizer.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/navigation_wo"
+        android:name="com.example.weddingoraganizer.ui.wo.WOFragment"
+        android:label="@string/title_wo"
+        tools:layout="@layout/fragment_wo" />
 </navigation>

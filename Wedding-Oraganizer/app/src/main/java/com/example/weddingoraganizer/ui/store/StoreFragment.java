@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 
 import com.example.weddingoraganizer.R;
@@ -35,6 +37,10 @@ public class StoreFragment extends Fragment {
     private AdapterStore adapterStore;
     private ArrayList<StoreItem.Result> results = new ArrayList<>();
 
+    private List<StoreItem.Result> resultList = null;
+
+    SearchView search_bar;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,7 +54,31 @@ public class StoreFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.recyclerView);
         progressBar = view.findViewById(R.id.progressBar);
+        search_bar = view.findViewById(R.id.search_bar);
         setupRecyclerView();
+
+        search_bar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText);
+                return true;
+            }
+        });
+    }
+
+    private void filter(String newText) {
+        List<StoreItem.Result> filterList = new ArrayList<>();
+        for (StoreItem.Result item : results  ){
+            if(item.getNama().toLowerCase().contains(newText.toLowerCase())){
+                filterList.add(item);
+            }
+        }
+        adapterStore.filter(filterList);
     }
 
     @Override
@@ -62,16 +92,30 @@ public class StoreFragment extends Fragment {
         adapterStore = new AdapterStore(getActivity(), results, new AdapterStore.AdapterListener() {
             @Override
             public void onClick(StoreItem.Result result) {
+                String gambar = "https://teman-wedding.cretech.id/storage/upload/paket/"+result.getGambar();
+                String gambar_user = "https://teman-wedding.cretech.id/storage/upload/profile/"+result.getGambaruser();
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
-                intent.putExtra("intent_title", result.getNama());
-//                intent.putExtra("intent_image", result.getImage());
-                startActivity( intent );
+                intent.putExtra("intent_id", result.getId());
+                intent.putExtra("intent_paket", result.getNama());
+                intent.putExtra("intent_penyedia", result.getPenyedia());
+                intent.putExtra("intent_detail", result.getDetail());
+                intent.putExtra("intent_harga", result.getHarga());
+                intent.putExtra("intent_alamat", result.getAlamat());
+                intent.putExtra("intent_rating", result.getRatingbulat());
+                intent.putExtra("intent_total", result.getTotalrating());
+                intent.putExtra("intent_noHp", result.getNo());
+                intent.putExtra("intent_gambar", gambar);
+                intent.putExtra("intent_gambaruser", gambar_user);
+
+                startActivity(intent);
             }
         });
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager( layoutManager );
         recyclerView.setAdapter( adapterStore );
+
+
     }
 
     public void showLoading(Boolean loading) {
@@ -93,7 +137,6 @@ public class StoreFragment extends Fragment {
                     Log.d(TAG, results.toString());
                     adapterStore.setData( results );
                 }
-
             }
 
             @Override
@@ -103,5 +146,6 @@ public class StoreFragment extends Fragment {
             }
         });
     }
+
 
 }
