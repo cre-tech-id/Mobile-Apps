@@ -94,8 +94,10 @@ public class ProfileFragment extends Fragment {
         Boolean logged_in = sp1.getBoolean("logged_in", false);
         if (sp1.contains("logged_in")) {
             getUser();
+            layout.setVisibility(View.VISIBLE);
+            logged_out_material.setVisibility(View.GONE);
         } else {
-            layout.setVisibility(View.INVISIBLE);
+            layout.setVisibility(View.GONE);
             logged_out_material.setVisibility(View.VISIBLE);
         }
 

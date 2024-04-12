@@ -67,7 +67,11 @@ public class BayarActivity extends AppCompatActivity {
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_MEDIA_AUDIO,
+            Manifest.permission.READ_MEDIA_IMAGES,
+            Manifest.permission.READ_MEDIA_VIDEO
+
     };
 
     @Override
@@ -149,7 +153,7 @@ public class BayarActivity extends AppCompatActivity {
             intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         } else {
             // any type of files including image can be selected
-            intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
             intent.setType("image/*");
         }
 
@@ -159,7 +163,14 @@ public class BayarActivity extends AppCompatActivity {
 
     private String getPath(Uri uri) {
         String[] projection = {MediaStore.Images.Media.DATA};
-        Cursor cursor = managedQuery(uri, projection, null, null, null);
+        Cursor cursor = getApplicationContext().getContentResolver().query(
+                uri,
+                projection,
+                null,
+                null,
+                null
+        );
+//        Cursor cursor = managedQuery(uri, projection, null, null, null);
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
         return cursor.getString(column_index);

@@ -28,7 +28,7 @@
 ## Wedding Organizer Apps
 
 ### About
-Wedding Organizer Booking mobile application is your one-stop solution for all your wedding planning needs. With a diverse range of wedding organizers available on our platform, you can easily find the perfect match for your dream wedding. From browsing wedding packages to booking services and discovering upcoming events, our app has everything you need to plan your special day seamlessly. And the event and wedding package can be filled by wedding organizer <a href="https://github.com/cre-tech-id/Web-Apps/tree/master/wedding-organizer">here</a>.
+Wedding Organizer Booking mobile application is your one-stop solution for all your wedding planning needs. With a diverse range of wedding organizers available on our platform, you can easily find the perfect match for your dream wedding. From browsing wedding packages to booking services and discovering upcoming events, our app has everything you need to plan your special day seamlessly. And the event and wedding package can be filled by wedding organizer <a href="https://github.com/cre-tech-id/laravel-velda">here</a>.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
