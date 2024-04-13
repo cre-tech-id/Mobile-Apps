@@ -79,12 +79,18 @@ public class MainActivity extends AppCompatActivity {
     private ConnectedThread mConnectedThread; // bluetooth background worker thread to send and receive data
     private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
 
+    private static final String[] PERMISSIONS_BLUETOOTH = {
+            Manifest.permission.BLUETOOTH_SCAN,
+            Manifest.permission.BLUETOOTH_CONNECT,
+            Manifest.permission.BLUETOOTH,
+            Manifest.permission.BLUETOOTH_ADVERTISE,
+            Manifest.permission.BLUETOOTH_ADMIN
+    };
+
     @Override
     protected void onStart() {
         super.onStart();
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-
+        checkPermission();
     }
 
     @Override
@@ -128,8 +134,7 @@ public class MainActivity extends AppCompatActivity {
                     if (msg.arg1 == 1) {
                         Toast.makeText(getApplicationContext(), "Connected to " + msg.obj, Toast.LENGTH_SHORT).show();
                         comand(message);
-                    }
-                    else {
+                    } else {
                         Toast.makeText(getApplicationContext(), "Connection Failed", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -140,10 +145,10 @@ public class MainActivity extends AppCompatActivity {
         btn_toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
+                if (b) {
                     bluetoothOn();
                     compoundButton.setBackgroundColor(Color.BLUE);
-                }else{
+                } else {
                     bluetoothOff();
                     compoundButton.setBackgroundColor(Color.RED);
                 }
@@ -153,11 +158,11 @@ public class MainActivity extends AppCompatActivity {
         btn_clean.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b){
+                if (b) {
                     compoundButton.setBackgroundColor(Color.BLUE);
                     String message = "C";
                     comand(message);
-                }else{
+                } else {
                     compoundButton.setBackgroundColor(Color.RED);
                     String message = "c";
                     comand(message);
@@ -168,11 +173,11 @@ public class MainActivity extends AppCompatActivity {
         btn_vacuum.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b){
+                if (b) {
                     compoundButton.setBackgroundColor(Color.BLUE);
                     String message = "V";
                     comand(message);
-                }else{
+                } else {
                     compoundButton.setBackgroundColor(Color.RED);
                     String message = "v";
                     comand(message);
@@ -183,11 +188,11 @@ public class MainActivity extends AppCompatActivity {
         btn_mix.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b){
+                if (b) {
                     compoundButton.setBackgroundColor(Color.BLUE);
                     String message = "X";
                     comand(message);
-                }else{
+                } else {
                     compoundButton.setBackgroundColor(Color.RED);
                     String message = "x";
                     comand(message);
@@ -198,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
         btn_auto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b){
+                if (b) {
                     compoundButton.setBackgroundColor(Color.BLUE);
                     String message = "A";
                     btn_clean.setVisibility(View.GONE);
@@ -206,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                     btn_clean_auto.setVisibility(View.VISIBLE);
                     btn_vacuum_auto.setVisibility(View.VISIBLE);
                     comand(message);
-                }else{
+                } else {
                     compoundButton.setBackgroundColor(Color.RED);
                     String message = "a";
                     btn_clean.setVisibility(View.VISIBLE);
@@ -221,11 +226,11 @@ public class MainActivity extends AppCompatActivity {
         btn_clean_auto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b){
+                if (b) {
                     compoundButton.setBackgroundColor(Color.BLUE);
                     String message = "CA";
                     comand(message);
-                }else{
+                } else {
                     compoundButton.setBackgroundColor(Color.RED);
                     String message = "cA";
                     comand(message);
@@ -236,11 +241,11 @@ public class MainActivity extends AppCompatActivity {
         btn_vacuum_auto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b){
+                if (b) {
                     compoundButton.setBackgroundColor(Color.BLUE);
                     String message = "VA";
                     comand(message);
-                }else{
+                } else {
                     compoundButton.setBackgroundColor(Color.RED);
                     String message = "vA";
                     comand(message);
@@ -253,7 +258,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 listPairedDevices();
 
-        }
+            }
         });
 
 
@@ -266,16 +271,17 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case MotionEvent.ACTION_UP:
                         mHandler.removeCallbacks(mForward);
-                        String message="S";
+                        String message = "S";
                         comand(message);
                         break;
                 }
                 return true;
             }
+
             Runnable mForward = new Runnable() {
                 @Override
                 public void run() {
-                    String message="F";
+                    String message = "F";
                     comand(message);
                     mHandler.postDelayed(this, 100);
                 }
@@ -291,16 +297,17 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case MotionEvent.ACTION_UP:
                         mHandler.removeCallbacks(mBack);
-                        String message="S";
+                        String message = "S";
                         comand(message);
                         break;
                 }
                 return true;
             }
+
             Runnable mBack = new Runnable() {
                 @Override
                 public void run() {
-                    String message="B";
+                    String message = "B";
                     comand(message);
                     mHandler.postDelayed(this, 100);
                 }
@@ -316,16 +323,17 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case MotionEvent.ACTION_UP:
                         mHandler.removeCallbacks(mLeft);
-                        String message="S";
+                        String message = "S";
                         comand(message);
                         break;
                 }
                 return true;
             }
+
             Runnable mLeft = new Runnable() {
                 @Override
                 public void run() {
-                    String message="L";
+                    String message = "L";
                     comand(message);
                     mHandler.postDelayed(this, 100);
                 }
@@ -341,16 +349,17 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case MotionEvent.ACTION_UP:
                         mHandler.removeCallbacks(mRight);
-                        String message="S";
+                        String message = "S";
                         comand(message);
                         break;
                 }
                 return true;
             }
+
             Runnable mRight = new Runnable() {
                 @Override
                 public void run() {
-                    String message="R";
+                    String message = "R";
                     comand(message);
                     mHandler.postDelayed(this, 100);
                 }
@@ -359,7 +368,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void comand(String Message){
+    private void comand(String Message) {
         if (mBTSocket != null) {
             try {
                 // Create the command that will be sent to arduino.
@@ -372,31 +381,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void bluetoothOn(){
+    private void bluetoothOn() {
+        checkPermission();
         if (!mBTAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-            Toast.makeText(getApplicationContext(),getString(R.string.sBTturON),Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.sBTturON), Toast.LENGTH_SHORT).show();
 
-        }
-        else{
-            Toast.makeText(getApplicationContext(),getString(R.string.BTisON), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), getString(R.string.BTisON), Toast.LENGTH_SHORT).show();
         }
     }
 
     // Enter here after user selects "yes" or "no" to enabling radio
 
 
-    private void bluetoothOff(){
+    private void bluetoothOff() {
+        checkPermission();
         mBTAdapter.disable(); // turn off
-        Toast.makeText(getApplicationContext(),"Bluetooth turned Off", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Bluetooth turned Off", Toast.LENGTH_SHORT).show();
     }
 
     final BroadcastReceiver blReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            checkPermission();
             String action = intent.getAction();
-            if(BluetoothDevice.ACTION_FOUND.equals(action)){
+            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 // add the name to the list
                 mBTArrayAdapter.add(device.getName() + "\n" + device.getAddress());
@@ -405,8 +416,9 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private void listPairedDevices(){
-        if(mBTAdapter.isEnabled()) {
+    private void listPairedDevices() {
+        if (mBTAdapter.isEnabled()) {
+            checkPermission();
             AlertDialog.Builder builderSingle = new AlertDialog.Builder(MainActivity.this);
             builderSingle.setIcon(R.drawable.ic_android_black_24dp);
             builderSingle.setTitle("Select One Name:-");
@@ -446,6 +458,7 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(getBaseContext(), getString(R.string.ErrSockCrea), Toast.LENGTH_SHORT).show();
                             }
                             try {
+                                checkPermission();
                                 mBTSocket.connect();
                             } catch (IOException e) {
                                 try {
@@ -509,6 +522,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     // Establish the Bluetooth socket connection.
                     try {
+                        checkPermission();
                         mBTSocket.connect();
                     } catch (IOException e) {
                         try {
@@ -534,6 +548,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException {
+        checkPermission();
         try {
             final Method m = device.getClass().getMethod("createInsecureRfcommSocketToServiceRecord", UUID.class);
             return (BluetoothSocket) m.invoke(device, BT_MODULE_UUID);
@@ -541,5 +556,17 @@ public class MainActivity extends AppCompatActivity {
             Log.e(TAG, "Could not create Insecure RFComm Connection",e);
         }
         return  device.createRfcommSocketToServiceRecord(BT_MODULE_UUID);
+    }
+
+    private void checkPermission(){
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_DENIED)
+        {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
+            {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 1);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+                return;
+            }
+        }
     }
 }
