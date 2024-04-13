@@ -32,6 +32,12 @@
         <li><a href="#about-wedding-organizer-apps">About</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#vacuum-cleaning-robot">Vacuum Cleaning Robot</a>
+      <ul>
+        <li><a href="#about-vacuum-cleaning-robot">About</a></li>
+      </ul>
+    </li>
   </ol>
 </details>
 
@@ -54,7 +60,7 @@ Pelatihan Apps is a comprehensive learning platform designed to support students
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- End Pelatihan PAM Section -->
+<!-- End Pelatihan Section -->
 
 
 <!-- Start Wedding Organizer Apps Section -->
@@ -65,6 +71,16 @@ Wedding Organizer Booking mobile application is your one-stop solution for all y
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- End Wedding Organizer Section -->
+
+
+<!-- Start Vacuum Cleaning Robot Section -->
+## Vacuum Cleaning Robot
+### About Vacuum Cleaning Robot
+Vacuum Cleaning Robot serves as a remote control for your cleaning and vacuum robot, allowing you to effortlessly clean dirty floors with the convenience of your smartphone or tablet. Just like operating a car with a remote control, our intuitive app lets you maneuver your cleaning robot across various floor surfaces.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- End Vacuum Cleaning Robot Section -->
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
