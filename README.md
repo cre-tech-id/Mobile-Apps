@@ -38,6 +38,12 @@
         <li><a href="#about-vacuum-cleaning-robot">About</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#aplikasi-kasir">Aplikasi Kasir</a>
+      <ul>
+        <li><a href="#about-aplikasi-kasir">About</a></li>
+      </ul>
+    </li>
   </ol>
 </details>
 
@@ -77,6 +83,15 @@ Wedding Organizer Booking mobile application is your one-stop solution for all y
 ## Vacuum Cleaning Robot
 ### About Vacuum Cleaning Robot
 Vacuum Cleaning Robot serves as a remote control for your cleaning and vacuum robot, allowing you to effortlessly clean dirty floors with the convenience of your smartphone or tablet. Just like operating a car with a remote control, our intuitive app lets you maneuver your cleaning robot across various floor surfaces.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- End Vacuum Cleaning Robot Section -->
+
+<!-- Start Vacuum Cleaning Robot Section -->
+## Aplikasi Kasir
+### About Aplikasi Kasir
+This Application is designed to streamline the process of selling coconuts, offering a seamless experience for both sellers and customers. With a user-friendly interface and robust features, this app simplifies the transaction process while providing essential tools for managing sales and inventory.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
